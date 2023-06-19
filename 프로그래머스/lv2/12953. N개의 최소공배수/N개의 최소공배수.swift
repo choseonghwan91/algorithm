@@ -1,5 +1,5 @@
 func solution(_ arr:[Int]) -> Int {
-    let LCM = arr.reduce(arr[0], { a, b in getLCM(a, b) })
+    let LCM = arr.reduce(arr[0], { getLCM($0, $1) })
     return LCM
 }
 
