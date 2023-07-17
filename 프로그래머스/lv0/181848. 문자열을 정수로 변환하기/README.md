@@ -1,6 +1,6 @@
-# [unrated] 문자열을 정수로 변환하기 - 181848 
+# [level 0] 문자열을 정수로 변환하기 - 181848
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181848) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181848)
 
 ### 성능 요약
 
@@ -61,6 +61,5 @@ Empty
 <ul>
 <li>"8542"를 정수로 바꾸면 8542입니다.</li>
 </ul>
-
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
