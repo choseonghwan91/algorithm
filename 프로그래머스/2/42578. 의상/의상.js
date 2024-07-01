@@ -7,7 +7,6 @@ function solution(clothes) {
     });
     map.forEach((name, index) => {
         const currentLength = name.length;
-        if(index === 0) result += currentLength;
         result += (result * currentLength) + currentLength;
     })
     return result;
