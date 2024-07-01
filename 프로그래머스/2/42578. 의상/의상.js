@@ -1,13 +1,14 @@
 function solution(clothes) {
     let result = 0;
     const map = new Map();
-    clothes.forEach(([name, type]) => {
-        const value = map.get(type) || []
-        map.set(type, [...value,name])
+    
+    clothes.forEach(([_, type]) => {
+        map.set(type, (map.get(type) || 0) + 1)
     });
-    map.forEach((name, index) => {
-        const currentLength = name.length;
-        result += (result * currentLength) + currentLength;
+    
+    map.forEach((count) => {
+        result += (result * count) + count;
     })
+    
     return result;
 }
