@@ -10,13 +10,17 @@ function solution(friends, gifts) {
     })
     
     for(let i = 0; i < friends.length; i++){
-        for(let j = i; j < friends.length; j++) {
-            if(i === j) continue;
-            if(graph[i][j] > graph[j][i]) reciveList[i]++;
-            if(graph[i][j] < graph[j][i]) reciveList[j]++;
-            if(graph[i][j] === graph[j][i]) {
-                if(score[friends[i]] > score[friends[j]]) reciveList[i]++;
-                if(score[friends[i]] < score[friends[j]]) reciveList[j]++;
+        for(let j = i+1; j < friends.length; j++) {
+            if(graph[i][j] > graph[j][i]) {
+                reciveList[i]++;
+            } else if(graph[i][j] < graph[j][i]) {
+                reciveList[j]++;
+            } else {
+                if(score[friends[i]] > score[friends[j]]) {
+                    reciveList[i]++;
+                } else if(score[friends[i]] < score[friends[j]]) { 
+                    reciveList[j]++;
+                }
             }
         }
     }
