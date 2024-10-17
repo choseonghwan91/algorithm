@@ -2,11 +2,11 @@ function solution(friends, gifts) {
     const reciveList = friends.map(()=> 0);
     const score = getScore(friends, gifts);
     const graph = Array.from({length: friends.length}, () => Array.from({length: friends.length}, () => 0));
-    const friendsIndex = getFriendsIndex(friends);
+    const friendsIndexList = getFriendsIndexList(friends);
     
     gifts.forEach((gift) => {
         const [giver, reciver] = gift.split(" ");
-        graph[friendsIndex[giver]][friendsIndex[reciver]]++;
+        graph[friendsIndexList[giver]][friendsIndexList[reciver]]++;
     })
     
     for(let i = 0; i < friends.length; i++){
@@ -24,7 +24,7 @@ function solution(friends, gifts) {
     return Math.max(...reciveList)
 }
 
-const getFriendsIndex = (friends) => {
+const getFriendsIndexList = (friends) => {
     const _friends = {};
     friends.forEach((friend, i) => {
         _friends[friend] = i;
